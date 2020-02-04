@@ -1,7 +1,10 @@
-import React from "react";
-import { Link, graphql } from "gatsby";import Layout from "../components/layout";
-import SEO from "../components/seo";const BlogPosts = ({ data }) => {
-  const blogPosts = data.allContentfulBlogPost.edges;
+import React from "react"
+import { Link, graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+const BlogPosts = ({ data }) => {
+  const blogPosts = data.allContentfulBlogPost.edges
   return (
     <Layout>
       <SEO title="Blog posts" />
@@ -16,8 +19,11 @@ import SEO from "../components/seo";const BlogPosts = ({ data }) => {
         <Link to="/">Go back to the homepage</Link>
       </div>
     </Layout>
-  );
-};export default BlogPosts;export const query = graphql`
+  )
+}
+export default BlogPosts
+
+export const query = graphql`
   query BlogPostsPageQuery {
     allContentfulBlogPost(limit: 1000) {
       edges {
@@ -33,9 +39,8 @@ import SEO from "../components/seo";const BlogPosts = ({ data }) => {
               url
             }
           }
-          tags
         }
       }
     }
   }
-`;
+`
