@@ -19,7 +19,7 @@ const BlogPost = ({ data }) => {
             </span>
           ))}
         </div>
-        <p className="body-text">{documentToReactComponents(body.json)}</p>
+        {documentToReactComponents(body.json)}
         <Link to="/blogposts">View more posts</Link>
         <Link to="/">Back to Home</Link>
       </div>
