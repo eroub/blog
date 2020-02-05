@@ -7,8 +7,8 @@ const BlogPosts = ({ data }) => {
   const blogPosts = data.allContentfulBlogPost.edges
   return (
     <Layout>
-      <SEO title="Blog posts" />
-      <h1>{"Here's a list of all blogposts!"}</h1>
+      <SEO title="Posts"/>
+      <h1>{"Posts"}</h1>
       <div className="blogposts">
         {blogPosts.map(({ node: post }) => (
           <div key={post.id}>
@@ -31,14 +31,7 @@ export const query = graphql`
           id
           title
           slug
-          body {
-            body
-          }
-          image {
-            file {
-              url
-            }
-          }
+          tags
         }
       }
     }

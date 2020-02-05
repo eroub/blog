@@ -1,10 +1,11 @@
 import React from "react"
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const BlogPost = ({ data }) => {
-  const { title, body, image } = data.contentfulBlogPost
+  const { title, body, image, tags } = data.contentfulBlogPost
   return (
     <Layout>
       <SEO title={title} />
@@ -12,13 +13,13 @@ const BlogPost = ({ data }) => {
         <h1>{title}</h1>
         <img alt={title} src={image.file.url} />
         <div className="tags">
-          {/* {tags.map(tag => (
+          {tags.map(tag => (
             <span className="tag" key={tag}>
               {tag}
             </span>
-          ))} */}
+          ))}
         </div>
-        <p className="body-text">{body.content[0].content[0].value}</p>
+        <p className="body-text">{documentToReactComponents(body.json)}</p>
         <Link to="/blogposts">View more posts</Link>
         <Link to="/">Back to Home</Link>
       </div>
@@ -33,17 +34,14 @@ export const pageQuery = graphql`
       title
       slug
       body {
-        content {
-          content {
-            value
-          }
-        }
+        json
       }
       image {
         file {
           url
         }
       }
+      tags
     }
   }
 `

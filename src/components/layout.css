@@ -654,7 +654,7 @@ header div h1 {
 
 .blogpost {
   font-size: 18px;
-  width: 35em;
+  width: 45em;
 }
 
 h1 {
@@ -683,6 +683,7 @@ img {
 
 .blogpost p.body-text {
   margin-bottom: 32px;
+  font-weight: 900
 }
 
 p {
