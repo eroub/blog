@@ -3,9 +3,11 @@ module.exports = {
     title: `The Roubekas Muse`,
     description: `An Art Project`,
     author: `Evan Roubekas`,
+    siteUrl: `https://blog.roubekas.com`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
