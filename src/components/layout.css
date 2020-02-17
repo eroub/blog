@@ -629,10 +629,6 @@ html {
 }
 
 header {
-  /* We use !important here to override
-  the inline styles just for this example.
-  in production code, avoid using it where
-  possible*/
   background-color: cadetblue !important;
 }
 
